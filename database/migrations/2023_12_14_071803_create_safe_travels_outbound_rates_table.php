@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('safe_travels_outbound_rates', function (Blueprint $table) {
+            $table->id();
+            $table->integer('age');
+            $table->integer('policy_max');
+            $table->float('rate');
+            $table->float('rate_2');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('safe_travels_outbound_rates');
+    }
+};
